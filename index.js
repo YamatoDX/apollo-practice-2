@@ -3,7 +3,6 @@ const { typeDefs } = require("./schema");
 const { Query } = require("./resolvers/Query");
 const { Product } = require("./resolvers/Product");
 const { Organisation } = require("./resolvers/Organisation");
-//
 
 const resolvers = {
   Query,
