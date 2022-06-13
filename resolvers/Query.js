@@ -1,5 +1,8 @@
 const Query = {
-  queryProduct: () => allProducts,
+  queryProduct: (parent, args, ctx) => {
+    const { allProducts } = ctx;
+    return allProducts;
+  },
   getProductById: (parent, args, ctx) => {
     const { allProducts } = ctx;
     const argId = args.id;
@@ -7,7 +10,10 @@ const Query = {
       allProducts.filter((eachProduct) => eachProduct._id === argId)?.[0] ?? {}
     );
   },
-  queryOrganisation: () => allOrgs,
+  queryOrganisation: (parent, args, ctx) => {
+    const { allOrgs } = ctx;
+    return allOrgs;
+  },
   getOrganisationById: (parent, args, ctx) => {
     const { allOrgs } = ctx;
     const argId = args.id;
