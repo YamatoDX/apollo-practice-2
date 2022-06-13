@@ -1,4 +1,3 @@
-const { allProducts } = require("../db");
 const Organisation = {
   products: (parent, args, ctx) => {
     const parentId = parent._id;

@@ -3,6 +3,7 @@ const { typeDefs } = require("./schema");
 const { Query } = require("./resolvers/Query");
 const { Product } = require("./resolvers/Product");
 const { Organisation } = require("./resolvers/Organisation");
+const { allProducts, allOrgs } = require("./db");
 
 const resolvers = {
   Query,
@@ -13,6 +14,10 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: {
+    allProducts,
+    allOrgs,
+  },
   csrfPrevention: true,
   introspection: true,
 });

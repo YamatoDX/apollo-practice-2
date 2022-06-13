@@ -1,4 +1,3 @@
-const { allProducts, allOrgs } = require("../db");
 const Query = {
   queryProduct: () => allProducts,
   getProductById: (parent, args, ctx) => {
