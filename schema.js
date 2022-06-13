@@ -27,6 +27,12 @@ const typeDefs = gql`
     queryOrganisation: [Organisation]
     getOrganisationById(id: String): Organisation
   }
+
+  type Mutation {
+    addProduct(_id: ID!, name: String, organisationId: String): Product
+    deleteProduct(_id: String): Product
+    deleteOrg(_id: String): Organisation
+  }
 `;
 
 module.exports = {
